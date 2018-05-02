@@ -1,0 +1,60 @@
+<!--pages/placeOrder/placeOrder.wxml-->
+<view class="page">
+  <!-- <view class="weui-search-bar" style="background:#4B8EFF;">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="输入商品名称进行查询..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindtap="showInput"/>
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+          </view>
+      </view>
+    </view>
+    <view class="weui-search-bar__cancel-btn t-fff"  bindtap="hideInput">筛选 </view>
+  </view> -->
+  <view wx:for="{{placeData}}" wx:key wx:for-item="items" wx:for-index="indexs">
+    <template is="placeList" data="{{items,indexs}}"></template>
+  </view>
+  
+  <template name="placeList">
+    <view class="pd20" style="border-bottom:10rpx solid #f0f0f0;">
+      <view class="business-list-hd f-s12 t-orange pd10" style="border-bottom:1px solid #f0f0f0;">
+      <view class="block-blue dp-inline"></view>
+      供应商：{{items.supplier}}
+      </view>
+      <view wx:for="{{items.list}}" wx:key wx:for-item="list" wx:for-index="index" class="business-list-bd pd10" style="border-bottom:1px solid #f0f0f0;">
+        <view class="weui-flex pt10 pb10" >
+              <view class="weui-flex__item f-s14" style="line-height:28px;">{{list.name}}
+              </view>
+              <view class="weui-flex__item">
+                <view class="dp-inline pr20 t-orange f-s12">{{list.price}} 元/{{list.unit}}</view>
+                <!-- <view class="dp-inline amounts" wx:if="{{edit}}">
+                  <view class="amount-hd dp-inline" bindtap="handeDel" data-list="{{index}}" data-items="{{indexs}}">
+                  <image src="../../static/img/arrow-left.png" style="width:14px;height:14px;margin:3px;"></image>
+                  </view>
+                  <view class="amount-bd dp-inline">{{list.total}}</view>
+                  <view class="amount-fd dp-inline" bindtap="handeAdd" data-list="{{index}}" data-items="{{indexs}}">
+                  <image src="../../static/img/arrow-right.png" style="width:14px;height:14px;margin:3px;"></image>
+                  </view>
+                </view> -->
+                <view class="dp-inline amounts pl20 f-s12" wx:if="{{!edit}}">数量{{list.total}}</view>
+              </view>
+          </view>
+          <!-- <view  class="f-s14 pb10">
+            <input placeholder="备注" />
+          </view> -->
+      </view>
+      <view class="business-list-td">
+      <input placeholder="备注" value="{{items.remark}}"/>
+      </view>
+    </view>
+  </template>
+<view class="fixed-bottom" style="background:#fff;">
+  <view class="weui-cell__bd">
+    <view class="dp-inline v-l-m t-orange" style="padding:8px 0px 8px 10px;">合计：{{totalPrice}}元</view>
+    <!-- <view class="weui-badge" style="margin-left: 5px;">{{totals}}</view> -->
+    <view class="btn-blue dp-inline fr" style="width:65px;">确定接单</view>
+    <view class="btn-blue-2 dp-inline fr" style="width:65px;">  联系商家</view>
+  </view>
+  </view>
+</view>

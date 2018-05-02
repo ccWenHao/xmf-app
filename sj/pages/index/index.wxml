@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="page">
+    <!-- <view class="viu-nav">采购 </view> -->
+    <!-- <view style="height:380rpx;">
+      <image src="../../static/img/banner.png" style="height:100%;;width:100%;"></image>
+    </view> -->
+    <!-- 轮播图 -->
+    <view class="section section_gap" >
+        <swiper class="swiper" indicator-dots="{{index_index_scroll_tmpl.indicatorDots}}" vertical="{{index_index_scroll_tmpl.vertical}}"
+                autoplay="{{index_index_scroll_tmpl.autoplay}}" interval="{{index_index_scroll_tmpl.interval}}" duration="{{index_index_scroll_tmpl.duration}}" bindchange="swiperchange">
+          <block wx:for="{{index_index_scroll_tmpl.images}}" wx:key="item.id">
+            <swiper-item>
+            <image src="{{item}}" style="height:100%;;width:100%;"/>
+            </swiper-item>
+          </block>
+        </swiper>
+  </view>
+  <!-- 轮播图 -->
+     <view class="page__bd pt20">
+        <view class="weui-flex  pd20">
+            <view class="weui-flex__item" wx:for="{{grids1}}" wx:key wx:for-index="index" wx:for-item="item" bindtap="uncultivated" data-name="{{item.name}}">
+              <navigator url="{{item.url}}" class="content-item"  hover-class="weui-grid_vui-active">
+                  <image class="weui-grid__icon" src="{{item.src}}" />
+                  <view class="weui-grid__label color f-s12">{{item.name}}</view>
+              </navigator>
+            </view>
+        </view>
+        <view class="weui-flex  pd20">
+            <view class="weui-flex__item" wx:for="{{grids2}}" wx:key wx:for-index="index" wx:for-item="item" bindtap="uncultivated" data-name="{{item.name}}">
+              <navigator url="{{item.url}}" class="content-item"  hover-class="weui-grid_vui-active">
+                  <image class="weui-grid__icon" src="{{item.src}}" />
+                  <view class="weui-grid__label color f-s12">{{item.name}}</view>
+              </navigator>
+            </view>
+        </view>
+    </view> 
+</view>

@@ -1,0 +1,213 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+
+/* 公共样式部分 */
+.page{
+  /* background-color: #F8F8F8; */
+  font-size: 16px;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  color:#4b4b4b;
+}
+/* 浮动 */
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
+.dp-inline{
+  display: inline-block;
+}
+/* 内边距 */
+  .pd5{
+    padding:5rpx;
+  }
+  .pd10{
+    padding:10rpx;
+  }
+  .pd20{
+    padding:20rpx;
+  }
+  .pd30{
+    padding:30rpx;
+  }
+  .pt5{
+    padding-top:5rpx;
+  }
+  .pt10{
+    padding-top:10rpx;
+  }
+  .pt20{
+    padding-top:20rpx;
+  }
+  .pt30{
+    padding-top:30rpx;
+  }
+  .pl5{
+    padding-left:5rpx;
+  }
+  .pl10{
+    padding-left:10rpx;
+  }
+  .pl20{
+    padding-left:20rpx;
+  }
+  .pl30{
+    padding-left:30rpx;
+  }
+  .pr5{
+    padding-right:5rpx;
+  }
+  .pr10{
+    padding-right:10rpx;
+  }
+  .pr20{
+    padding-right:20rpx;
+  }
+  .pr30{
+    padding-right:30rpx;
+  }
+  .pb5{
+    padding-bottom:5rpx;
+  }
+  .pb10{
+    padding-bottom:10rpx;
+  }
+  .pb20{
+    padding-bottom:20rpx;
+  }
+  .pb30{
+    padding-bottom:30rpx;
+  }
+/* 内边距结束 */
+/* 外边距 开始*/
+  .mb10{
+    margin-bottom: 10rpx
+  }
+  .mb20{
+    margin-bottom: 20rpx
+  }
+/* 外边距 结束*/
+/* 居中居左居右 开始*/
+  .tc{
+    text-align: center;
+  }
+  .tr{
+    text-align: right;
+  }
+  .tl{
+    text-align: left;
+  }
+.ell{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 居中居左居右 结束*/
+/* 字体颜色 开始*/
+  .t-fff{
+    color:#fff;
+  }
+  .t-grey {
+    color:#c2c2c2;
+  }
+  .t-green  {
+    color:#51C332;
+  }
+  .t-yellow  {
+    color:#ffca00;
+  }
+  .t-orange  {
+    color:#f60;
+  }
+  .t-blue  {
+    color:#4B8EFF;
+  }
+/* 字体颜色 结束*/
+/* 边框 */
+  .bd-b-5{
+    border-bottom: 5px solid #f0f0f0;
+  }
+  .bd-b{
+    border-bottom: 1px solid #f0f0f0;
+  }
+/* 边框 */
+/* 背景色 */
+ .bgc-fff{
+    background:#fff;
+  }
+/* 背景色 */
+/* 按钮 开始*/
+  .btn-blue{
+    background:#4B8EFF;
+    padding:8px 15px;
+    text-align: center;
+    color:#fff;
+  }
+  .btn-blue-2{
+    background:#7bbfea;
+    padding:8px 15px;
+    text-align: center;
+    color:#fff;
+  }
+/* 按钮 结束*/
+/* 左侧块 */
+ .block-blue{
+   width:5px;
+   height: 20px;
+   background: #4B8EFF;
+   vertical-align: middle;
+ }
+/* 左侧块 */
+/* 导航 开始*/
+  .viu-nav{
+    /* background: #FF6600; */
+    background:#4B8EFF;
+    width: 100%;
+    padding:15rpx;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+  }
+/* 导航 结束*/
+
+/* 样式重写 */
+  .page .color{
+    color:#4b4b4b;
+  }
+  .page .f-s10{
+    font-size: 10px;
+  }
+  .page .f-s12{
+    font-size: 12px;
+  }
+  .page .f-s14{
+    font-size: 14px;
+  }
+  .page .f-s16{
+    font-size: 16px;
+  }
+  .page .weui-grid_vui-active{
+    background: #fefefe;
+  }
+  #weui-grid_vui{
+    border:0px solid #fff;
+  }
+/* 样式重写 */
+/* 固定在底部 */
+.fixed-bottom{
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+  z-index: 9999;
+}
+.v-l-t{
+  vertical-align: top;
+}
+.v-l-b{
+  vertical-align: bottom;
+}
+.v-l-m{
+  vertical-align: middle;
+}

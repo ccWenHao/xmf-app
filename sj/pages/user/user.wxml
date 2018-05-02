@@ -1,0 +1,21 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+  <view style="height:380rpx;position: relative">
+    <image src="../../static/img/user-banner1.jpg" style="height:100%;width:100%;"></image>
+    <view style="height:380rpx;position: absolute;top:0px;left:0px;width:100%" class="tc">
+      <view class="pb20">
+        <image src="../../static/img/banner.png" style="height:50px;width:50px;border-radius: 50%;margin-top:40px;"></image>
+      </view>
+      <text class="t-fff pt20">啊柒</text>
+    </view>  
+  </view>
+   <view class="weui-cells weui-cells_after-title">
+      <navigator wx:for="{{userList}}" wx:key wx:for-item="item" url="{{item.url}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <image src="{{item.icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">{{item.title}}</view>
+           <view class="weui-cell__ft weui-cell__ft_in-access"></view> 
+      </navigator>
+  </view>
+</view>

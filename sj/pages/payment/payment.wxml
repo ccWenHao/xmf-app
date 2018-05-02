@@ -1,0 +1,41 @@
+<!--pages/payment/payment.wxml-->
+<view class="page">
+  <view class="payment-th pd20 t-fff" style="background:#10aeff;">
+   <view class="weui-article__h3">收货地址：</view>
+    <view class="weui-flex align-center pd10" bindtap='handleAddress'>
+        <view class="weui-flex__item tc" style="flex:4;">{{addr.addr}}</view>
+         <view class="weui-cell__ft weui-cell__ft_in-access t-fff"></view>
+      </view>
+   <view class="weui-article__h3 tc">联系人：{{addr.name}}  联系电话：{{addr.phone}} </view>
+  </view>
+  <view wx:for="{{paymentData}}" wx:for-item="items" wx:key>
+  <template is="paymentList" data="{{items}}"></template>
+  </view>
+  <template name="paymentList">
+  <view class="payment-tb">
+   <view class="pd20 bd-b-5">
+       <view class="weui-article__h3 tc pd20">{{items.supplier}}</view> 
+      <view class="weui-flex align-center bd-b pd10" wx:for="{{items.list}}" wx:for-item="item" wx:key>
+         <view class="weui-flex__item ell" style="flex:3;">{{item.name}} </view>
+         <view class="weui-flex__item  tr" >× {{item.total}} </view>
+      </view>
+       <view class="weui-flex align-center bd-b pd10" bindtap='handleRemarks'>
+         <view class="weui-flex__item ell" style="flex:3;">备注</view>
+         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+   </view>
+  </view>  
+  </template>
+    <view class="fixed-bottom bgc-fff">
+    <view class="weui-flex align-center">
+      <view class="weui-flex__item pl20" style="flex:3;">        
+        <view class="dp-inline pr20">数量：6 </view>|
+        <!-- <view class="weui-badge">6</view> -->
+        <view class="dp-inline pl20">￥56.59</view>
+      </view>
+      <view class="weui-flex__item" >
+        <view class="btn-blue dp-inline fr" style="width:100%;">立即支付</view>
+      </view>
+    </view>
+  </view>
+</view>

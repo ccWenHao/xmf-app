@@ -1,0 +1,31 @@
+<!--pages/collect/collect.wxml-->
+<view class="page">
+   <view class="weui-search-bar" style="background:#fff;">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="输入商品名称进行查询..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindtap="showInput"/>
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+      </view>
+       <view class="weui-search-bar__cancel-btn t-fff"  bindtap="hideInput">
+        <picker class="weui-btn" style="width:25px;height:30px;" mode="date" value="{{date}}" start="2018-05-01" end="2018-08-01" bindchange="bindDateChange">
+        <image src="../../static/img/u955.png" style="width:25px;height:30px;"></image>
+                <!-- <view class="btn-blue">筛选</view> -->
+            </picker>
+        </view> 
+    </view> 
+    <view wx:for="{{collectData}}" wx:for-item="item" class="pd20">
+      <template is="collectList" data="{{item}}"></template>
+    </view>
+    <template name="collectList">
+       <view class="weui-flex pt20 pb20" style="border-bottom:1px solid #f0f0f0;">
+            <view class="weui-flex__item"><view class="ell f-s12 tc">{{item.name}}</view></view>
+            <view class="weui-flex__item"><view class="f-s12 tc">{{item.total}}{{item.unit}}</view></view>
+            <view class="weui-flex__item"><view class="f-s12 tc t-orange">查看明细</view></view>
+        </view>
+    </template>
+</view>
+

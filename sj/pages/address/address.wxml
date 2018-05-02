@@ -1,0 +1,19 @@
+<!--pages/address/address.wxml-->
+<view class="page pd20">
+  <view class="pd10">
+   <view class="weui-flex pd10">
+      <view class="weui-flex__item" style="flex:8">
+        <view>湖北省武汉市洪山区鲁磨路东湖旅游风景区湖北省武汉市洪山区鲁磨路东湖旅游风景区</view>
+        <view class="weui-flex align-center f-s12 pd10">
+          <view class="weui-flex__item ell" style="flex:4">联系人：康罗娜 </view>
+          <view class="weui-flex__item ell" style="flex:5">电话：15927427723 </view>
+        </view>
+      </view>
+      <view class="weui-flex__item ell tr">
+       <icon type="success" size="20"></icon>
+      </view>
+    </view>
+   
+  </view>
+ <button class="weui-btn f-s14" type="primary">新增收货地址</button>
+</view>

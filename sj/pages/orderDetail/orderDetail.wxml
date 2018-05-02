@@ -1,0 +1,17 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="page" style="padding-bottom:30px;">
+  <import src="../placeOrder/placeOrder.wxml"/>
+  <view wx:for="{{detailData}}" wx:key wx:for-item="items" wx:for-index="indexs">
+    <template is="placeList" data="{{items,indexs,edit}}"></template>
+  </view>
+  <view class="fixed-bottom" style="background:#fff;">
+  <view class="weui-cell__bd">
+    <view class="dp-inline v-l-m t-orange" style="padding:8px 0px 8px 10px;">合计：{{totalPrice}}元</view>
+    <!-- <view class="weui-badge" style="margin-left: 5px;">{{totals}}</view> -->
+    <!-- status 1待接单，2待配送，3已完成，4已取消 -->
+    <view wx:if="{{detaileType == 1}}" class="btn-blue dp-inline fr" style="width:65px;">确定接单</view>
+    <view wx:if="{{detaileType == 2}}" class="btn-blue dp-inline fr" style="width:65px;">确认配送</view>
+    <view class="btn-blue-2 dp-inline fr" style="width:65px;">  联系商家</view>
+  </view>
+  </view>
+</view>

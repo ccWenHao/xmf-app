@@ -1,0 +1,69 @@
+<!--pages/order/order.wxml-->
+<view class="page">
+    <!-- <view class="weui-search-bar" style="background:#FF6600;">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="输入供应商名称进行查询..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindtap="showInput"/>
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+      </view>
+      <view class="weui-search-bar__cancel-btn t-fff"  bindtap="hideInput">搜索 </view>
+    </view> -->
+     <view class="weui-tab">
+        <view class="weui-navbar">
+            <block wx:for="{{tabs}}" wx:key="*this">
+                <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                    <view class="weui-navbar__title">{{item}}</view>
+                </view>
+            </block>
+            <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);width:4em;"></view>
+        </view>
+        <view class="weui-tab__panel">
+            <view wx:for="{{listData}}" wx:for-item="item" wx:key>
+                <template is="list" data="{{item}}"/>
+              </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+        </view>
+    </view>
+    <template name="list">
+      <view class="weui-cells weui-cells_after-title">
+         <navigator url="{{item.id}}" bindtap='handleDetail' data-item="{{item}}" class="weui-cell weui-cell_access f-s14" hover-class="weui-cell_active"> 
+         <!-- <view bindtap='handleDetail' data-item="{{item}}" class="weui-cell weui-cell_access f-s14" hover-class="weui-cell_active">  -->
+          <!-- <view class="pr20">
+            <image src="{{item.src}}" style="height:80px;width:100px;"></image>
+          </view> -->
+          <view class="weui-cell__bd" style="min-width:0;">
+            <view>
+            <view  class="ell f-s14">供应商：{{item.supplier}}</view>
+            </view>
+            <view class="ell f-s14">地址：{{item.addr}}</view>
+            <view>              
+              <view class="weui-flex pt10 f-s12">
+                  <view class="weui-flex__item">
+                  <view class="placeholder">配送：{{item.creatTime}}</view>
+                  </view>
+                  <view class="pr10">
+                  <!-- status 1待接单，2待配送，3已完成，4已取消 -->
+                    <view wx:if="{{item.status == 1}}" class="placeholder t-orange">待接单</view>
+                    <view wx:if="{{item.status == 2}}" class="placeholder t-yellow">待配送</view>
+                    <view wx:if="{{item.status == 3}}" class="placeholder t-green">已完成</view>
+                    <view wx:if="{{item.status == 4}}" class="placeholder t-grey">已取消</view>
+                  </view>
+              </view>
+            </view>
+           
+          </view>
+            <!-- <view class="weui-cell__ft weui-cell__ft_in-access">
+            </view> -->
+         </navigator> 
+        <!-- </view> -->
+      </view>
+    </template>
+</view>

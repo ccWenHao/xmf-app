@@ -1,0 +1,4 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="page">
+  意见反馈
+</view>

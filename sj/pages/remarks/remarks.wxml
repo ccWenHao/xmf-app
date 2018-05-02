@@ -1,0 +1,9 @@
+<!--pages/remarks/remarks.wxml-->
+<view class="page pd20">
+  <view class="weui-cells__title">备注：</view>
+  <view class="weui-cell__bd pd20 f-s12" style="background:#f0f0f0;">
+      <textarea class="weui-textarea pd10" placeholder="请输入..." style="height: 3.3em;" />
+      <view class="weui-textarea-counter">0/200</view>
+  </view>
+  <button class="weui-btn f-s14" type="primary">确定</button>
+</view>

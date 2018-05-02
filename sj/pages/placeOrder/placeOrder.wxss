@@ -1,0 +1,23 @@
+/* pages/placeOrder/placeOrder.wxss */
+.amounts{
+  border:1px solid #4B8EFF; 
+  height: 20px;
+  vertical-align: middle;
+}
+.amount-hd{
+  width:20px;
+  height: 20px;
+  border-right:1px solid #4B8EFF;
+}
+.amount-bd{  
+  min-width:20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  vertical-align: top;
+}
+.amount-fd{
+  width:20px;
+  height: 20px;
+  border-left:1px solid #4B8EFF;
+}
